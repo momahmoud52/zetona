@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>زتونة المنهج</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&family=Amiri:wght@400;700&display=swap');
+
+        body {
+            font-family: 'Cairo', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            color: #333;
+            animation: fadeIn 2s ease-in-out;
+            overflow: hidden;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Video background */
+        .video-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .video-background video {
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+            opacity: 0.1; /* Adjust opacity to make text more visible */
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px;
+            background-color: rgba(0, 123, 255, 0.8);
+            color: white;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            animation: slideIn 1s ease-in-out;
+        }
+
+        @keyframes slideIn {
+            from { transform: translateX(-100%); }
+            to { transform: translateX(0); }
+        }
+
+        .logo img {
+            width: 50px;
+            height: 50px;
+            margin-right: 10px;
+            border-radius: 50%;
+        }
+
+        .logo h1 {
+            font-family: 'Amiri', serif;
+            font-size: 1.8rem;
+            margin: 0;
+        }
+
+        nav {
+            display: flex;
+            gap: 15px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: white;
+            font-size: 1rem;
+            font-weight: bold;
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+
+        nav a:hover {
+            transform: scale(1.1);
+            color: #ffd700;
+        }
+
+        main {
+            text-align: center;
+            padding: 50px 20px;
+            background-color: rgba(255, 255, 255, 0.8);
+            margin: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            animation: popUp 1.5s ease;
+        }
+
+        @keyframes popUp {
+            from { transform: scale(0.8); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
+        main h2 {
+            font-family: 'Amiri', serif;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #007bff;
+        }
+
+        main p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            font-family: 'Cairo', sans-serif;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #343a40;
+            color: white;
+            margin-top: 20px;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        /* About section styles */
+        .about-container {
+            display: none;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-top: 30px;
+        }
+
+        /* Media Queries for responsive design */
+        @media (max-width: 768px) {
+            .logo h1 {
+                font-size: 1.5rem;
+            }
+            nav a {
+                font-size: 0.9rem;
+            }
+            main h2 {
+                font-size: 2rem;
+            }
+            main p {
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 15px;
+            }
+            .logo {
+                margin-bottom: 10px;
+            }
+            nav {
+                flex-direction: column;
+                gap: 10px;
+                align-items: flex-start;
+            }
+            nav a {
+                font-size: 0.9rem;
+            }
+            main h2 {
+                font-size: 1.8rem;
+            }
+            main p {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="video-background">
+        <video autoplay muted loop id="background-video">
+            <source src="893049801132603832.mp4" type="video/mp4">
+            <source src="path/to/your/video.ogv" type="video/ogv">
+            <source src="path/to/your/video.webm" type="video/webm">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <header>
+        <div class="logo">
+            <img src="Firefly Design a logo for me in the shape of an olive wearing glasses and under it the phrase “Zayto.png" alt="شعار الموقع">
+            <h1>زتونة المنهج</h1>
+        </div>
+        <nav>
+            <a href="#" id="home-link">الرئيسية</a>
+            <a href="#" id="about-link">عن الموقع</a>
+            <a href="upload.html" id="upload-link">استمرار لرفع البيانات</a> <!-- Added the "Continue to Upload" link -->
+        </nav>
+    </header>
+
+    <main>
+        <h2>مرحباً بكم في زتونة المنهج</h2>
+        <p>
+            زتونة المنهج هو موقع مبتكر لمساعدة الطلاب على الدراسة وتحليل المواد التعليمية بسهولة باستخدام تقنيات الذكاء الاصطناعي.
+        </p>
+    </main>
+
+    <div class="about-container" id="about-section">
+        <h3>عن الموقع</h3>
+        <p>
+            زتونة المنهج هو موقع مبتكر لمساعدة الطلاب على الدراسة وتحليل المواد التعليمية بسهولة باستخدام تقنيات الذكاء الاصطناعي. نحن نقدم بيئة تعليمية تفاعلية تهدف إلى تحسين تجربة الطلاب التعليمية من خلال أدوات حديثة تساعدهم في فهم الدروس وحل الواجبات.
+        </p>
+        <p>
+            بالإضافة إلى ذلك، يوفر الموقع مجموعة متنوعة من الأدوات التي تساعد في تنظيم الوقت والمذاكرة بفعالية. يمكن للطلاب استخدام ميزات مثل جدول الدراسة الذكي، الملاحظات التفاعلية، والاختبارات التقييمية لتعزيز مستواهم الأكاديمي.
+        </p>
+        <p>
+            سواء كنت طالباً في المرحلة الثانوية أو الجامعية، ستجد في "زتونة المنهج" كل ما تحتاجه لتسهل عليك المذاكرة وتساعدك في تحقيق النجاح الأكاديمي. نحن نؤمن بأن التعليم يجب أن يكون متاحًا للجميع، ولهذا السبب، نحن نعمل على تقديم محتوى تعليمي عالي الجودة بطرق مبتكرة تسهم في تطوير مهارات الطلاب.
+        </p>
+    </div>
+
+    <footer>
+        &copy; 2024 زتونة المنهج - جميع الحقوق محفوظة.
+    </footer>
+
+    <script>
+        // Toggle visibility of the "About" section
+        document.getElementById('about-link').addEventListener('click', function(event) {
+            event.preventDefault(); // Prevent default link behavior
+            const aboutSection = document.getElementById('about-section');
+            // Toggle visibility
+            if (aboutSection.style.display === 'none' || aboutSection.style.display === '') {
+                aboutSection.style.display = 'block';
+            } else {
+                aboutSection.style.display = 'none';
+            }
+        });
+
+        // Reload page if on the homepage when clicking "الرئيسية"
+        document.getElementById('home-link').addEventListener('click', function(event) {
+            event.preventDefault(); // Prevent default link behavior
+
+            // Check if the current page is the first page (reload if true)
+            if (window.location.pathname === '/' || window.location.pathname === '/index.html') {
+                window.location.reload(); // Reload the page
+            } else {
+                window.location.href = '/'; // Redirect to the first page
+            }
+        });
+    </script>
+</body>
+</html>
