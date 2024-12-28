@@ -7,6 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Cairo&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
     <style>
+        /* General styles */
         body {
             font-family: 'Cairo', sans-serif;
             margin: 0;
@@ -23,20 +24,22 @@
             to { opacity: 1; }
         }
 
+        /* Container styles */
         .upload-container {
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            padding: 20px;
+            padding: 30px;
             background-color: #ffffff;
             margin: 20px;
             border-radius: 10px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             opacity: 0;
             animation: fadeUp 1.5s forwards;
-            max-width: 700px;
+            max-width: 800px;
             width: 100%;
+            margin: 20px auto;
         }
 
         @keyframes fadeUp {
@@ -127,9 +130,32 @@
         }
 
         /* Media Queries for responsiveness */
+        @media (max-width: 1024px) {
+            .upload-container {
+                padding: 25px;
+            }
+
+            .drop-area {
+                height: 180px;
+                font-size: 1.1rem;
+            }
+
+            .motivational-quote {
+                font-size: 1.4rem;
+            }
+
+            .home-link, .about-link {
+                font-size: 1.1rem;
+            }
+
+            #result-button {
+                font-size: 1.1rem;
+            }
+        }
+
         @media (max-width: 768px) {
             .upload-container {
-                padding: 15px;
+                padding: 20px;
             }
 
             .drop-area {
@@ -138,7 +164,7 @@
             }
 
             .motivational-quote {
-                font-size: 1.4rem;
+                font-size: 1.3rem;
             }
 
             .home-link, .about-link {
@@ -152,7 +178,7 @@
 
         @media (max-width: 480px) {
             .upload-container {
-                padding: 10px;
+                padding: 15px;
             }
 
             .drop-area {
@@ -170,6 +196,26 @@
 
             #result-button {
                 font-size: 1rem;
+            }
+        }
+
+        /* For mobile phones in landscape orientation */
+        @media (max-width: 1024px) and (orientation: landscape) {
+            .upload-container {
+                padding: 20px;
+            }
+
+            .drop-area {
+                height: 160px;
+                font-size: 1.1rem;
+            }
+
+            .motivational-quote {
+                font-size: 1.3rem;
+            }
+
+            .home-link, .about-link {
+                font-size: 1.1rem;
             }
         }
     </style>
@@ -293,17 +339,8 @@
                 quoteElement.innerHTML = quotes[quoteIndex];
                 quoteElement.style.opacity = 1;
                 quoteIndex = (quoteIndex + 1) % quotes.length;
-            }, 1000);
-        }, 3000);
-
-        // When clicking the result button
-        document.getElementById('result-button').addEventListener('click', function() {
-            const extractedText = sessionStorage.getItem("extractedText");
-            sessionStorage.setItem('extractedText', extractedText);
-            window.location.href = 'results.html'; // Transition to results page
-        });
+            }, 500);
+        }, 5000);
     </script>
-
-    <button id="result-button" style="display:none;">انتقل إلى النتائج</button>
 </body>
 </html>
